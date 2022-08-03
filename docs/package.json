@@ -1,0 +1,20 @@
+{
+  "name": "AKElite",
+  "version": "0.0.1",
+  "description": "用于查询明日方舟精英敌人数据的网页",
+  "main": "index.js",
+  "authors": {
+    "name": "Sherkey",
+    "email": "sherkeyxd@qq.com"
+  },
+  "repository": "https://github.com/SherkeyXD/AKElite/AKElite",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-pwa": "^1.9.7",
+    "vuepress": "^1.5.3"
+  }
+}
