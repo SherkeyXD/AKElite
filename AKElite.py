@@ -49,33 +49,18 @@ for enemy in enemy_data.values():
 #download_png(boss, 'boss')
 
 
-f = open("normal.md", "w", encoding='utf-8')
+f = open("./docs/src/enemy/normal.md", "w", encoding='utf-8')
 f.write('---\ntitle: 普通敌人\npermalink: /normal\n---\n')
 for line in normal:
-    f.write(f'![{line}](http://124.223.3.107:8088/normal/{line}.png "{line}")\n')
+    f.write(f'![{line}](https://img.sherkey.ml:8088/normal/{line}.png "{line}")\n')
 
 
-f = open("elite.md", "w", encoding='utf-8')
+f = open("./docs/src/enemy/elite.md", "w", encoding='utf-8')
 f.write('---\ntitle: 精英敌人\npermalink: /elite\n---\n')
 for line in elite:
-    f.write(f'![{line}](http://124.223.3.107:8088/elite/{line}.png "{line}")\n')
+    f.write(f'![{line}](https://img.sherkey.ml:8088/elite/{line}.png "{line}")\n')
 
-i = 0
-l = len(boss)
-f = open("boss.md", "w", encoding='utf-8')
-f.write('---\ntitle: 领袖\npermalink: /boss\n---\n')
-for line in boss:
-    f.write( '| !['+line+']' +'('+'http://124.223.3.107:8088/boss/'+line+'.png) ')
-    i += 1
-    if i == l:
-        f.write('|\n')
-        for n in range (1, l+1):
-            f.write('| - ')
-        f.write('|\n')
-for line in boss:
-    f.write('| '+line+' ')
-f.write('|')
-    
-    
-
-        
+f = open("./docs/src/enemy/boss.md", "w", encoding='utf-8')
+f.write('---\ntitle: 领袖敌人\npermalink: /boss\n---\n')
+for line in elite:
+    f.write(f'![{line}](https://img.sherkey.ml:8088/boss/{line}.png "{line}")\n')
