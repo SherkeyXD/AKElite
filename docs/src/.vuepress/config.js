@@ -4,7 +4,7 @@ module.exports = {
   title: 'AKElite 方舟敌人精英查询',
   description: '这是一个用于快速查询方舟中哪些敌人为精英的网站',
   head: [
-    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['link', { rel: 'icon', href: '/logo/1024x.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
