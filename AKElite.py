@@ -13,6 +13,9 @@ def get_data(fileurl, filename):
 
 def download_png(listname, catename):
     for line in listname:
+        if '"' in line:
+            lien = line.strip('"')
+            line =  '“' + lien + '”'    
         url = "https://prts.wiki/w/Special:Filepath/头像_敌人_" + line + ".png"
         filename = line + ".png"
         filepath = "./assets/" + catename + "/"
@@ -52,15 +55,24 @@ for enemy in enemy_data.values():
 f = open("./docs/src/enemy/normal.md", "w", encoding='utf-8')
 f.write('---\ntitle: 普通敌人\npermalink: /normal\n---\n')
 for line in normal:
+    if '"' in line:
+        lien = line.strip('"')
+        line =  '“' + lien + '”'
     f.write(f'![{line}](https://img.sherkey.ml:8088/normal/{line}.png "{line}")\n')
 
 
 f = open("./docs/src/enemy/elite.md", "w", encoding='utf-8')
 f.write('---\ntitle: 精英敌人\npermalink: /elite\n---\n')
 for line in elite:
-    f.write(f'![{line}](https://img.sherkey.ml:8088/elite/{line}.png "{line}")\n')
+    if '"' in line:
+        lien = line.strip('"')
+        line =  '“' + lien + '”'
+    f.write(f'![{line}](https:/6/img.sherkey.ml:8088/elite/{line}.png "{line}")\n')
 
 f = open("./docs/src/enemy/boss.md", "w", encoding='utf-8')
 f.write('---\ntitle: 领袖敌人\npermalink: /boss\n---\n')
-for line in elite:
+for line in boss:
+    if '"' in line:
+        lien = line.strip('"')
+        line =  '“' + lien + '”'
     f.write(f'![{line}](https://img.sherkey.ml:8088/boss/{line}.png "{line}")\n')
