@@ -48,9 +48,9 @@ for enemy in enemy_data.values():
         if not enemy['hideInHandbook']:
             boss.append(enemy['name'])
 
-download_png(normal, 'normal')
-download_png(elite, 'elite')
-download_png(boss, 'boss')
+#download_png(normal, 'normal')
+#download_png(elite, 'elite')
+#download_png(boss, 'boss')
 
 
 f = open("./docs/src/enemy/normal.md", "w", encoding='utf-8')
@@ -67,7 +67,7 @@ for line in elite:
     if '"' in line:
         lien = line.strip('"')
         line =  '“' + lien + '”'
-    f.write(f'![{line}](https:/6/img.sherkey.ml:8088/elite/{line}.png "{line}")\n')
+    f.write(f'![{line}](https://img.sherkey.ml:8088/elite/{line}.png "{line}")\n')
 
 f = open("./docs/src/enemy/boss.md", "w", encoding='utf-8')
 f.write('---\ntitle: 领袖敌人\npermalink: /boss\n---\n')
@@ -81,5 +81,5 @@ print("\nMarkdown files generated.")
 
 os.system("cd docs && yarn run build")
 os.system("cd src/.vuepress/dist && echo 'akelite.sherkey.ml' > CNAME")
-os.system('git add . && git commit -m "Site update on $" ')
+os.system('git init && git add . && git commit -m "Site update on: $(date -d "today" + "%Y-%m-%d %H:%M:%S")"')
 os.system("git push -f git@github.com:SherkeyXD/AKElite-docs.git main:gh-pages")
