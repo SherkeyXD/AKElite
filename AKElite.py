@@ -78,8 +78,3 @@ for line in boss:
     f.write(f'![{line}](https://img.sherkey.ml:8088/boss/{line}.png "{line}")\n')
 
 print("\nMarkdown files generated.")
-
-os.system("cd docs && yarn run build")
-os.system("cd src/.vuepress/dist && echo 'akelite.sherkey.ml' > CNAME")
-os.system('git init && git add . && git commit -m "Site update on: $(date -d "today" + "%Y-%m-%d %H:%M:%S")"')
-os.system("git push -f git@github.com:SherkeyXD/AKElite-docs.git main:gh-pages")
