@@ -23,7 +23,7 @@ def download_png(listname, catename):
             os.makedirs(filepath)
         if filename not in os.listdir(filepath):
             wget.download(url, out=os.path.join(filepath, filename))
-    print(f"\n{catename.title()} pictures updated.")
+    print(f"\033[32m\n {catename.title()} pictures updated.\033[0m")
 
 
 normal = []
@@ -48,9 +48,9 @@ for enemy in enemy_data.values():
         if not enemy['hideInHandbook']:
             boss.append(enemy['name'])
 
-#download_png(normal, 'normal')
-#download_png(elite, 'elite')
-#download_png(boss, 'boss')
+download_png(normal, 'normal')
+download_png(elite, 'elite')
+download_png(boss, 'boss')
 
 
 f = open("./docs/src/enemy/normal.md", "w", encoding='utf-8')
@@ -78,3 +78,7 @@ for line in boss:
     f.write(f'![{line}](https://img.sherkey.ml:8088/boss/{line}.png "{line}")\n')
 
 print("\nMarkdown files generated.")
+
+os.system("cd docs && git add .")
+os.system('git commit -m "Site update on $(TZ=UTC-8 date +%Y-%m-%d" "%H:%M:%S)"')
+os.system("git push -f")
