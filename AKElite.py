@@ -57,24 +57,21 @@ f = open("./docs/src/enemy/normal.md", "w", encoding='utf-8')
 f.write('---\ntitle: 普通敌人\npermalink: /normal\n---\n')
 for line in normal:
     if '"' in line:
-        lien = line.strip('"')
-        line =  '“' + lien + '”'
+        line = '“' + line.strip('"') + '”'
     f.write(f'![{line}](https://img.sherkey.ml:8088/normal/{line}.png "{line}")\n')
 
 f = open("./docs/src/enemy/elite.md", "w", encoding='utf-8')
 f.write('---\ntitle: 精英敌人\npermalink: /elite\n---\n')
 for line in elite:
     if '"' in line:
-        lien = line.strip('"')
-        line =  '“' + lien + '”'
+        line = '“' + line.strip('"') + '”'
     f.write(f'![{line}](https://img.sherkey.ml:8088/elite/{line}.png "{line}")\n')
 
 f = open("./docs/src/enemy/boss.md", "w", encoding='utf-8')
 f.write('---\ntitle: 领袖敌人\npermalink: /boss\n---\n')
 for line in boss:
     if '"' in line:
-        lien = line.strip('"')
-        line =  '“' + lien + '”'
+        line = '“' + line.strip('"') + '”'
     f.write(f'![{line}](https://img.sherkey.ml:8088/boss/{line}.png "{line}")\n')
 
 print("\nMarkdown files generated.")
